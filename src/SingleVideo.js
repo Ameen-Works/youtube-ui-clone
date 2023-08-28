@@ -17,6 +17,7 @@ function SingleVideo({
       <a href={video_link} target="_blank" rel="noreferrer">
         <img src={thumb_img} class="thumbnail" alt="" />
       </a>
+      <h5 className="title">{video_duration}</h5>
       <div class="content">
         <a href={channel_link} target="_blank" rel="noreferrer">
           <img src={profile_img} class="channel-icon" alt="" />
