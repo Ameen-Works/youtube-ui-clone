@@ -110,7 +110,7 @@ function Videos() {
             key: API_KEY,
             part: "snippet,contentDetails",
             chart: "mostPopular",
-            maxResults: 10,
+            maxResults: 50,
             regionCode: "IN",
           })
       );
@@ -178,13 +178,13 @@ function Videos() {
   return (
     <div className="videos">
       <Filter />
-      <div className="row">
+      <div className="video-container">
         {videos.map((video) => (
           <SingleVideo
             key={video.id}
             thumb_img={video.snippet.thumbnails.high.url}
             profile_img={video.channelIcon}
-            title={video.snippet.title}
+            title={video.snippet.title.substring(0, 51)}
             channel_name={video.snippet.channelTitle}
             video_duration={convertDuration(video.contentDetails.duration)}
             video_link={`https://www.youtube.com/watch?v=${video.id}`}
